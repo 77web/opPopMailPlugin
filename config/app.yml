@@ -1,0 +1,5 @@
+all:
+  pop_mail_host: localhost
+  pop_mail_user: default@example.com
+  pop_mail_password: test
+  pop_mail_port: 110

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>opPopMailPlugin</name>
+ <channel>plugins.openpne.jp</channel>
+ <summary>OpenPNE3のメール投稿処理にPOP3を使えるようにする</summary>
+ <description>メール投稿の処理にPOP3を利用できるようにします。
+
+受信メールを直接phpに引き渡せないサーバーでも、キャッチオールメールの設定ができれば、cron設定をすることでメール投稿が利用できるようになります。
+メール受信サーバーとして外部サーバーが使えるようになります。</description>
+ <lead>
+  <name>77web</name>
+  <user>77web</user>
+  <email />
+  <active>yes</active>
+ </lead>
+ <date>2011-02-13</date>
+ <time>12:57:15</time>
+ <version>
+  <release>0.9.0</release>
+  <api>0.9.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license>PHP</license>
+ <notes>beta release</notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="05991948091845e94fdd5a7341919b1e" name="config/app.yml" role="data" />
+   <file baseinstalldir="/" md5sum="95e9875b657065fc046faccae7bff4d0" name="lib/task/opPopMailPluginMailcheckTask.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="cf4fb5e34827c4bec7a0030138d81831" name="lib/vendor/PEAR/Net/POP3.php" role="data" />
+   <file baseinstalldir="/" md5sum="12e9d3276c46d195c52d1193d356d29a" name="README" role="data" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.3</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.2.0</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.9.0</release>
+    <api>0.9.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2011-02-13</date>
+   <license>PHP</license>
+   <notes>beta release</notes>
+  </release>
+ </changelog>
+</package>
