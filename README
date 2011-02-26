@@ -5,13 +5,12 @@
 1.サーバー側でキャッチオールメールの設定をする
 2.(OpenPNEのディレクトリ)/pluginsにopPopMailPluginを設置
 3.OpenPNE.ymlのmail_domain設定を1で設定したキャッチオールドメインに設定
-4.opPopMailPlugin/config/app.ymlにてメールサーバーの情報を設定
-5.(OpenPNEのディレクトリ)/symfony opPopMailPluguin:mail-checkをcronジョブとして設定。お好みの間隔で。
+4.opPopMailPlugin/config/app.ymlにてメールサーバーの情報と一度に処理するメールの件数を設定
+5.(OpenPNEのディレクトリ) /plugins/opPopMailPlugin/bin/popmail.sh を実行可能なパーミッション（7xx）に設定し、cronジョブとして設定。お好みの間隔で。
 
 ■動作確認について
 OpenPNE3.4.9.2をcoreserverに設置して確認済み。
 
 ■今後の実装予定
-・POP3ライブラリをPEAR::Net_POP3からコアにバンドルのZend::Mailに変更したいです。
-・一度に処理するメール上限数を制限できるようにしたいです。（大量にメールを受信してしまうとmemory_limitにひっかかることが予想されるため）
+・POP3ライブラリをPEAR::Net_POP3からコアにバンドルのZend::Mailに変更するかも？
 ・OpenPNE3.6系での確認がまだなので確認したいです。

@@ -1,5 +1,11 @@
 all:
+  #メールサーバーのホスト名
   pop_mail_host: localhost
+  #メールサーバーのユーザー名
   pop_mail_user: default@example.com
+  #メールサーバーのパスワード
   pop_mail_password: test
+  #メールサーバーのポート番号
   pop_mail_port: 110
+  #一度に処理するメール件数。設定なしならサーバーに溜まっている全件を処理しようと試みます。
+  pop_mail_max_mail_per_cron: 5

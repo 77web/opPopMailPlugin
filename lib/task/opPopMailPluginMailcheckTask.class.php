@@ -38,14 +38,19 @@ EOF;
     $pop3->connect($server, $port);
     $pop3->login($user, $password);
     
-    $numMsg = $pop3->numMsg();
-    if(!$numMsg)
+    $messageCount = $pop3->numMsg();
+    if(!$messageCount)
     {
       throw new Exception('No Message');
     }
+    $maxMessageCount = sfConfig::get('app_pop_mail_max_mail_per_cron', 0);
+    if($maxMessageCount > 0 && $messageCount > $maxMessageCount)
+    {
+      $messageCount = $maxMessageCount;
+    }
     
     $mails = array();
-    for($i=1;$i<=$numMsg;$i++)
+    for($i=1;$i<=$messageCount;$i++)
     {
       $mails[] = $pop3->getMsg($i);
       $pop3->deleteMsg($i);
