@@ -8,7 +8,7 @@ class opPopMailPluginMailcheckTask extends sfBaseTask
     $this->name             = 'mail-check';
     $this->briefDescription = '';
     $this->detailedDescription = <<<EOF
-The [opPopMailPlugin:mailcheck|INFO] task does things.
+The [opPopMailPlugin:mailcheck|INFO] task executes mail action.
 Call it with:
 
   [./symfony opPopMailPlugin:mail-check|INFO]
@@ -35,8 +35,16 @@ EOF;
     
     
     $pop3 = & new Net_POP3();
-    $pop3->connect($server, $port);
-    $pop3->login($user, $password);
+    
+    if(!$pop3->connect($server, $port))
+    {
+      throw new Exception('Could not connect.');
+    }
+    
+    if(!$pop3->login($user, $password))
+    {
+      throw new Exception('Could not login. Perhaps you have set wrong username and/or password in your app.yml.');
+    }
     
     $messageCount = $pop3->numMsg();
     if(!$messageCount)
